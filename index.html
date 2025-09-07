@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoryn Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+  body {
+    height: 100vh;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    overflow: hidden;
+    color: #fff;
+  }
+
+  /* Rain animation */
+  .rain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top:0;
+    left:0;
+  }
+  .drop {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: rgba(255,255,255,0.3);
+    animation: fall 1s linear infinite;
+  }
+  @keyframes fall {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(100vh); }
+  }
+
+  /* Snow animation */
+  .snow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top:0;
+    left:0;
+  }
+  .flake {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    animation: snowfall linear infinite;
+  }
+  @keyframes snowfall {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(100vh); }
+  }
+
+  header {
+    text-align: center;
+    margin-top: 60px;
+    z-index:2;
+    position:relative;
+  }
+  header h1 {
+    font-size: 4em;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px #00f;
+    animation: fadeInDown 1s ease forwards;
+  }
+  header p {
+    font-size: 1.3em;
+    margin-top: 10px;
+    opacity: 0.8;
+    animation: fadeIn 1.5s ease forwards;
+  }
+  @keyframes fadeInDown { 0% {opacity:0; transform:translateY(-50px);} 100% {opacity:1; transform:translateY(0);} }
+  @keyframes fadeIn {0%{opacity:0;}100%{opacity:1;}}
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    width:90%;
+    max-width:1000px;
+    margin:50px auto 0;
+    z-index:2;
+    position:relative;
+  }
+  .project-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 25px;
+    text-align:center;
+    transition: transform 0.5s, background 0.5s, box-shadow 0.5s;
+    backdrop-filter: blur(10px);
+    cursor:pointer;
+  }
+  .project-card:hover {
+    transform: translateY(-15px) rotateZ(2deg);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+  }
+  .project-card h2 { margin-bottom:10px; font-size:1.5em; text-shadow:0 0 5px #00f; }
+  .project-card a { color:#00ffff; text-decoration:none; font-weight:500; transition:color 0.3s; }
+  .project-card a:hover { color:#ff0; }
+
+  footer { text-align:center; margin:50px 0 20px; opacity:0.7; position:relative; z-index:2; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Zoryn</h1>
+  <p>Welcome to my portfolio — explore my amazing projects!</p>
+</header>
+
+<section class="projects">
+  <div class="project-card">
+    <h2>Calculator</h2>
+    <a href="https://your-username.github.io/calculator-repo/">Visit Project</a>
+  </div>
+  <div class="project-card">
+    <h2>Game Project</h2>
+    <a href="https://your-username.github.io/game-repo/">Visit Project</a>
+  </div>
+  <div class="project-card">
+    <h2>Another Project</h2>
+    <a href="https://your-username.github.io/another-repo/">Visit Project</a>
+  </div>
+</section>
+
+<footer>&copy; 2025 Zoryn. All rights reserved.</footer>
+
+<!-- Rain -->
+<div class="rain" id="rain"></div>
+<!-- Snow -->
+<div class="snow" id="snow"></div>
+
+<script>
+  // Rain drops
+  const rainEl = document.getElementById('rain');
+  for(let i=0;i<150;i++){
+    const drop = document.createElement('div');
+    drop.className='drop';
+    drop.style.left=Math.random()*100+'%';
+    drop.style.animationDuration=0.5+Math.random()*1+'s';
+    drop.style.animationDelay=Math.random()*2+'s';
+    drop.style.height=5+Math.random()*15+'px';
+    rainEl.appendChild(drop);
+  }
+
+  // Snow flakes
+  const snowEl = document.getElementById('snow');
+  for(let i=0;i<100;i++){
+    const flake = document.createElement('div');
+    flake.className='flake';
+    flake.style.left=Math.random()*100+'%';
+    flake.style.animationDuration=2+Math.random()*3+'s';
+    flake.style.animationDelay=Math.random()*2+'s';
+    flake.style.width=3+Math.random()*5+'px';
+    flake.style.height=3+Math.random()*5+'px';
+    snowEl.appendChild(flake);
+  }
+</script>
+
+</body>
+</html>
