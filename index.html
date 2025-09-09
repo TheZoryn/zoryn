@@ -57,8 +57,8 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
 
 /* Animations */
 @keyframes fadeIn{to{opacity:1;transform:translateY(0);}}
-@keyframes fadeSlide{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
-@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.2);}}
+@keyframes fadeSlide{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);} }
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.2);} }
 @media(max-width:900px){.hero{flex-direction:column;text-align:center;}}
 </style>
 </head>
@@ -88,6 +88,11 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
     <div class="project-card">
       <h3>Calculator</h3>
       <button onclick="window.open('https://thezoryn.github.io/Calculator/','_blank')">View Live</button>
+    </div>
+    <div class="project-card">
+      <h3>Naruto Quiz</h3>
+      <p>Discover which Naruto character you are in this interactive, fun quiz!</p>
+      <button onclick="window.open('https://thezoryn.github.io/naruto_quiz/','_blank')">Play Quiz</button>
     </div>
     <div class="project-card">
       <h3>Surprise Game</h3>
