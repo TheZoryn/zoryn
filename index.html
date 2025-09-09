@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zoryn Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0f1724;color:#fff;scroll-behavior:smooth;overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;background:#0f1724;color:#fff;overflow-x:hidden;scroll-behavior:smooth;}
 a{text-decoration:none;color:inherit;}
 
 /* Header */
@@ -19,14 +20,19 @@ nav a:hover{color:#fff;}
 .auth-btn:hover{transform:scale(1.05);}
 
 /* Hero */
-.hero{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;padding:0 50px;text-align:center;}
+.hero{display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;text-align:center;position:relative;overflow:hidden;}
 .hero h1{font-size:3rem;font-weight:800;margin-bottom:20px;background:linear-gradient(90deg,#7c3aed,#06b6d4,#facc15);-webkit-background-clip:text;color:transparent;}
-.hero p{font-size:1.2rem;margin-bottom:30px;color:#94a3b8;}
-.hero .btn{padding:12px 30px;margin:10px;border:none;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#06b6d4);color:#fff;font-weight:700;cursor:pointer;transition:0.3s;box-shadow:0 15px 40px rgba(124,58,237,0.4);}
-.hero .btn:hover{transform:scale(1.1) translateY(-5px);}
+.hero p{font-size:1.2rem;margin-bottom:30px;color:#94a3b8;max-width:800px;line-height:1.6;}
+.hero .btn-calculator{padding:12px 30px;margin:10px;border:none;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#9333ea);color:#fff;font-weight:700;cursor:pointer;transition:0.3s;}
+.hero .btn-calculator:hover{transform:scale(1.1) translateY(-5px);}
+.hero .btn-quiz{padding:12px 30px;margin:10px;border:none;border-radius:999px;background:linear-gradient(90deg,#facc15,#fbbf24);color:#0f1724;font-weight:700;cursor:pointer;transition:0.3s;}
+.hero .btn-quiz:hover{transform:scale(1.1) translateY(-5px);}
+
+/* Animated boy */
+.hero .boy{width:100px;height:100px;background:url('boy-wave.gif') no-repeat center/contain;margin:20px auto;animation:wave 2s infinite;}
 
 /* Sections */
-section{padding:100px 50px;position:relative;z-index:1;}
+section{padding:100px 50px;position:relative;}
 h2{font-size:2rem;text-align:center;margin-bottom:50px;background:linear-gradient(90deg,#7c3aed,#06b6d4);-webkit-background-clip:text;color:transparent;}
 
 /* Projects */
@@ -38,7 +44,13 @@ h2{font-size:2rem;text-align:center;margin-bottom:50px;background:linear-gradien
 .project-card button{padding:8px 20px;border:none;background:linear-gradient(90deg,#7c3aed,#06b6d4);color:#fff;border-radius:999px;cursor:pointer;font-weight:600;transition:0.3s;}
 .project-card button:hover{transform:scale(1.05);}
 
-/* Social Media */
+/* Secret project */
+.secret{display:none;}
+
+/* About */
+#about p{max-width:800px;margin:0 auto;text-align:center;color:#94a3b8;line-height:1.6;}
+
+/* Social */
 .social-section{display:flex;justify-content:center;align-items:center;gap:25px;flex-wrap:wrap;}
 .social-card{width:150px;height:60px;display:flex;align-items:center;justify-content:center;border:2px solid #7c3aed;border-radius:12px;position:relative;transition:0.3s;cursor:pointer;background:rgba(124,58,237,0.1);font-weight:600;color:#fff;}
 .social-card:hover{background:linear-gradient(90deg,#7c3aed,#06b6d4);box-shadow:0 0 15px #7c3aed,0 0 25px #06b6d4;transform:scale(1.05);}
@@ -47,8 +59,11 @@ h2{font-size:2rem;text-align:center;margin-bottom:50px;background:linear-gradien
 
 /* Footer */
 footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
+
+/* Animations */
+@keyframes wave{0%,100%{transform:rotate(0deg);}50%{transform:rotate(10deg);}}
+@media(max-width:900px){.hero{padding:100px 20px;}}
 </style>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -65,46 +80,27 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
 
 <section class="hero">
   <h1>Welcome to Zoryn</h1>
-  <p>The ultimate next-gen portfolio hub with interactive projects and smooth animations.</p>
-  <button class="btn" onclick="window.open('https://thezoryn.github.io/Calculator/','_blank')">View Calculator</button>
-  <button class="btn" onclick="window.open('https://thezoryn.github.io/naruto_quiz/','_blank')">Play Naruto Quiz</button>
+  <p>The ultimate next-gen portfolio hub with interactive projects, smooth 3D animations, and immersive experiences. We create innovative games, quizzes, and tools that inspire players and developers alike.</p>
+  <button class="btn-calculator" onclick="window.open('https://thezoryn.github.io/Calculator/','_blank')">View Calculator</button>
+  <button class="btn-quiz" onclick="window.open('https://thezoryn.github.io/naruto_quiz/','_blank')">Play Naruto Quiz</button>
+  <div class="boy" id="boy"></div>
+  <p id="greeting" style="color:#facc15;font-weight:600;"></p>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
-    <div class="project-card">
-      <h3>Calculator</h3>
-      <button onclick="window.open('https://thezoryn.github.io/Calculator/','_blank')">View Live</button>
-    </div>
-    <div class="project-card">
-      <h3>Naruto Quiz</h3>
-      <p>Find out which Naruto character you are!</p>
-      <button onclick="window.open('https://thezoryn.github.io/naruto_quiz/','_blank')">Take Quiz</button>
-    </div>
-    <div class="project-card">
-      <h3>Surprise Game</h3>
-      <p>Launching <strong>1 Jan 2026</strong></p>
-      <button disabled>Coming Soon</button>
-    </div>
-    <div class="project-card">
-      <h3>Next Adventure</h3>
-      <p>Coming <strong>May 2026</strong></p>
-      <button disabled>Coming Soon</button>
-    </div>
-    <div class="project-card secret" style="display:none;">
-      <h3>Secret Beta Project</h3>
-      <p>Exclusive content for logged-in users.</p>
-      <button>Access Now</button>
-    </div>
+    <div class="project-card"><h3>Calculator</h3><button onclick="window.open('https://thezoryn.github.io/Calculator/','_blank')">View Live</button></div>
+    <div class="project-card"><h3>Naruto Quiz</h3><p>Find out which Naruto character you are!</p><button onclick="window.open('https://thezoryn.github.io/naruto_quiz/','_blank')">Take Quiz</button></div>
+    <div class="project-card"><h3>Surprise Game</h3><p>Launching <strong>1 Jan 2026</strong></p><button disabled>Coming Soon</button></div>
+    <div class="project-card"><h3>Next Adventure</h3><p>Coming <strong>May 2026</strong></p><button disabled>Coming Soon</button></div>
+    <div class="project-card secret"><h3>Secret Beta Project</h3><p>Exclusive content for logged-in users.</p><button>Access Now</button></div>
   </div>
 </section>
 
 <section id="about">
   <h2>About Zoryn</h2>
-  <p style="max-width:700px;margin:0 auto;text-align:center;color:#94a3b8;">
-    Zoryn is a cutting-edge game development studio creating immersive and innovative gaming experiences.
-  </p>
+  <p>Zoryn is a cutting-edge game development studio that pushes the boundaries of creativity and technology. We design immersive worlds, interactive experiences, and innovative gameplay that captivates players. Our team focuses on storytelling, artistry, and cutting-edge coding to deliver top-tier games and tools. From indie gems to full-scale adventures, every project is crafted with precision, passion, and vision. Innovation and fun are at the heart of Zoryn, making each release unforgettable and inspiring. Join us as we shape the future of gaming and interactive experiences around the world.</p>
 </section>
 
 <section id="social">
@@ -118,7 +114,7 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
 
 <section id="contact">
   <h2>Contact</h2>
-  <p style="max-width:700px;margin:0 auto;text-align:center;color:#94a3b8;">Reach out via email or social links for updates.</p>
+  <p style="max-width:700px;margin:0 auto;text-align:center;color:#94a3b8;">Reach out via email or social links for updates and the latest launches. Stay connected with Zoryn for early access and exclusive content!</p>
 </section>
 
 <footer>
@@ -126,18 +122,25 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
 </footer>
 
 <script>
+// Project card reveal on scroll
+const cards = document.querySelectorAll('.project-card');
+function reveal(){cards.forEach(card=>{if(card.getBoundingClientRect().top<window.innerHeight-100)card.classList.add('visible');});}
+window.addEventListener('scroll',reveal);reveal();
+
+// Netlify Identity login
 netlifyIdentity.on("login", user => {
-  document.querySelector(".auth-btn").innerText = `Welcome, ${user.user_metadata.full_name || "User"}`;
+  document.querySelector(".auth-btn").innerText = "Logout";
   document.querySelector(".auth-btn").onclick = () => netlifyIdentity.logout();
+  document.getElementById("greeting").innerText = `Hello, ${user.user_metadata.full_name || "User"}!`;
   document.querySelectorAll(".secret").forEach(el => el.style.display = "block");
 });
 
 netlifyIdentity.on("logout", () => {
   document.querySelector(".auth-btn").innerText = "Login";
   document.querySelector(".auth-btn").onclick = () => netlifyIdentity.open();
+  document.getElementById("greeting").innerText = "";
   document.querySelectorAll(".secret").forEach(el => el.style.display = "none");
 });
 </script>
-
 </body>
 </html>
