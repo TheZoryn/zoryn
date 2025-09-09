@@ -56,7 +56,7 @@ h2{font-size:2rem;text-align:center;margin-bottom:50px;background:linear-gradien
 footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
 
 /* Animations */
-@keyframes fadeIn{to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0);} }
 @keyframes fadeSlide{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);} }
 @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.2);} }
 @media(max-width:900px){.hero{flex-direction:column;text-align:center;}}
@@ -74,14 +74,19 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
   </nav>
 </header>
 
+<!-- Hero Section -->
 <section class="hero">
   <div class="hero-left">
     <h1>Welcome to Zoryn</h1>
     <p>The ultimate next-gen portfolio hub with interactive projects and smooth 3D animations.</p>
-    <button class="btn" onclick="window.location='https://thezoryn.github.io/Calculator/'">View Calculator</button>
+    <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+      <button class="btn" onclick="window.location='https://thezoryn.github.io/Calculator/'">View Calculator</button>
+      <button class="btn" style="background:linear-gradient(90deg,#facc15,#7c3aed);" onclick="window.location='https://thezoryn.github.io/naruto_quiz/'">Play Naruto Quiz</button>
+    </div>
   </div>
 </section>
 
+<!-- Projects Section -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
@@ -107,6 +112,7 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
   </div>
 </section>
 
+<!-- About Section -->
 <section id="about">
   <h2>About Zoryn</h2>
   <p>
@@ -114,6 +120,7 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
   </p>
 </section>
 
+<!-- Social Media Section -->
 <section id="social">
   <h2>Social Media</h2>
   <div class="social-section">
@@ -135,6 +142,7 @@ footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:0.9rem;}
   </div>
 </section>
 
+<!-- Contact Section -->
 <section id="contact">
   <h2>Contact</h2>
   <p style="max-width:700px;margin:0 auto;text-align:center;color:#94a3b8;">Reach out via email or social links. Stay connected for the latest updates and launches.</p>
