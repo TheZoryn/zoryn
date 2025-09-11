@@ -47,16 +47,20 @@ h2{font-size:2rem;text-align:center;margin-bottom:40px;background:linear-gradien
 /* About */
 #about p{max-width:800px;margin:0 auto;text-align:center;color:#94a3b8;line-height:1.6;}
 
-/* Footer */
-footer{text-align:center;padding:30px 20px;color:#94a3b8;font-size:0.9rem;}
-
-/* Floating Social Bar */
+/* Social */
 .social-section{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;}
 .social-card{width:150px;height:60px;display:flex;align-items:center;justify-content:center;border:2px solid #7c3aed;border-radius:12px;position:relative;transition:0.3s;cursor:pointer;background:rgba(124,58,237,0.1);font-weight:600;color:#fff;}
 .social-card:hover{background:linear-gradient(90deg,#7c3aed,#06b6d4);box-shadow:0 0 15px #7c3aed,0 0 25px #06b6d4;transform:scale(1.05);}
 .social-card img{width:24px;height:24px;margin-right:10px;}
 .social-card span.status{position:absolute;top:-10px;right:-10px;background:#facc15;color:#0f1724;padding:2px 6px;font-size:0.7rem;border-radius:8px;}
 
+/* Footer */
+footer{text-align:center;padding:30px 20px;color:#94a3b8;font-size:0.9rem;}
+
+/* Ads */
+.ad-container{max-width:100%;margin:16px auto;text-align:center;}
+.native-ad-container{max-width:100%;width:320px;margin:0 auto;}
+@media(min-width:768px){.native-ad-container{width:728px;}}
 @media(max-width:900px){.hero{padding:150px 20px 50px;}}
 </style>
 </head>
@@ -74,30 +78,46 @@ footer{text-align:center;padding:30px 20px;color:#94a3b8;font-size:0.9rem;}
 </header>
 
 <!-- TOP NATIVE AD -->
-<div style="text-align:center; margin:16px 0;">
+<div class="native-ad-container">
 <script async="async" data-cfasync="false" src="//pl27620520.revenuecpmgate.com/878ab987f1bf86081c57089fbf8d2789/invoke.js"></script>
 <div id="container-878ab987f1bf86081c57089fbf8d2789"></div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <h1>Welcome to Zoryn</h1>
   <p>The ultimate next-gen portfolio hub with interactive projects and immersive experiences. Explore games, quizzes, and tools designed to inspire and entertain.</p>
-  <button id="calculatorBtn" class="btn-calculator">View Calculator</button>
-  <button id="quizBtn" class="btn-quiz">Play Naruto Quiz</button>
+  <button class="btn-calculator" id="calcBtn">View Calculator</button>
+  <button class="btn-quiz" id="quizBtn">Play Naruto Quiz</button>
   <p id="greeting"></p>
 </section>
 
+<!-- TOP BANNER AD -->
+<div class="ad-container">
+<script type="text/javascript">
+	atOptions = {
+		'key' : '5808ec1e0a2fc8bef5c6307af61f0809',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/5808ec1e0a2fc8bef5c6307af61f0809/invoke.js"></script>
+</div>
+
+<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
     <div class="project-card">
       <h3>Calculator</h3>
-      <button onclick="window.open('https://thezoryn.github.io/Calculator/','_blank')">View Live</button>
+      <button id="calcBtn2">View Live</button>
     </div>
     <div class="project-card">
       <h3>Naruto Quiz</h3>
       <p>Find out which Naruto character you are!</p>
-      <button onclick="window.open('https://thezoryn.github.io/Naruto-Quiz/','_blank')">Take Quiz</button>
+      <button id="quizBtn2">Take Quiz</button>
     </div>
     <div class="project-card">
       <h3>Surprise Game</h3>
@@ -117,30 +137,8 @@ footer{text-align:center;padding:30px 20px;color:#94a3b8;font-size:0.9rem;}
   </div>
 </section>
 
-<!-- INSIDE CONTENT BANNER -->
-<div style="text-align:center; margin:16px 0;">
-<script type="text/javascript" src="//pl27620037.revenuecpmgate.com/a3/19/97/a31997c3c1cdde52e3a87f7653e97c9d.js"></script>
-</div>
-
-<section id="about">
-  <h2>About Zoryn</h2>
-  <p>Zoryn is a cutting-edge game development studio that pushes the boundaries of creativity and technology. We design immersive worlds, interactive experiences, and innovative gameplay that captivates players. Our team focuses on storytelling, artistry, and coding excellence to deliver top-tier games and tools. From indie gems to full-scale adventures, every project is crafted with precision, passion, and vision. Innovation and fun are at the heart of Zoryn, making each release unforgettable. Join us as we shape the future of gaming and interactive experiences worldwide.</p>
-</section>
-
-<section id="social">
-  <h2>Social Media</h2>
-  <div class="social-section">
-    <script type='text/javascript' src='//pl27620037.revenuecpmgate.com/a3/19/97/a31997c3c1cdde52e3a87f7653e97c9d.js'></script>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p style="max-width:700px;margin:0 auto;text-align:center;color:#94a3b8;">Reach out via email or social links for updates and early access to projects.</p>
-</section>
-
-<!-- BOTTOM BANNER (new 320x50) -->
-<div style="text-align:center; margin:16px 0;">
+<!-- BOTTOM BANNER AD -->
+<div class="ad-container">
 <script type="text/javascript">
 	atOptions = {
 		'key' : '5808ec1e0a2fc8bef5c6307af61f0809',
@@ -152,6 +150,30 @@ footer{text-align:center;padding:30px 20px;color:#94a3b8;font-size:0.9rem;}
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/5808ec1e0a2fc8bef5c6307af61f0809/invoke.js"></script>
 </div>
+
+<!-- SOCIAL BAR AD -->
+<div class="ad-container">
+<script type='text/javascript' src='//pl27620037.revenuecpmgate.com/a3/19/97/a31997c3c1cdde52e3a87f7653e97c9d.js'></script>
+</div>
+
+<section id="about">
+  <h2>About Zoryn</h2>
+  <p>Zoryn is a cutting-edge game development studio that pushes the boundaries of creativity and technology. We design immersive worlds, interactive experiences, and innovative gameplay that captivates players. Our team focuses on storytelling, artistry, and coding excellence to deliver top-tier games and tools. From indie gems to full-scale adventures, every project is crafted with precision, passion, and vision. Innovation and fun are at the heart of Zoryn, making each release unforgettable. Join us as we shape the future of gaming and interactive experiences worldwide.</p>
+</section>
+
+<section id="social">
+  <h2>Social Media</h2>
+  <div class="social-section">
+    <div class="social-card"><img src="youtube.png" alt=""><span>YouTube</span><span class="status">Coming Soon</span></div>
+    <div class="social-card"><img src="instagram.png" alt=""><span>Instagram</span><span class="status">Coming Soon</span></div>
+    <div class="social-card"><img src="discord.png" alt=""><span>Discord</span><span class="status">Coming Soon</span></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="max-width:700px;margin:0 auto;text-align:center;color:#94a3b8;">Reach out via email or social links for updates and early access to projects.</p>
+</section>
 
 <footer>
   <p>&copy; 2025 Zoryn — Crafted with 💜</p>
@@ -170,7 +192,6 @@ netlifyIdentity.on("login", user => {
   document.getElementById("greeting").innerText = `Hello, ${user.user_metadata.full_name || "User"}!`;
   document.querySelectorAll(".secret").forEach(el => el.style.display = "block");
 });
-
 netlifyIdentity.on("logout", () => {
   document.querySelector(".auth-btn").innerText = "Login";
   document.querySelector(".auth-btn").onclick = () => netlifyIdentity.open();
@@ -178,15 +199,19 @@ netlifyIdentity.on("logout", () => {
   document.querySelectorAll(".secret").forEach(el => el.style.display = "none");
 });
 
-// POPUNDER on click
-document.getElementById("calculatorBtn").addEventListener("click", function(){
-  window.open("//pl27620470.revenuecpmgate.com/e5/4c/9a/e54c9a94ff38a44a6ada75257338ec81.js", "_blank");
-  window.open('https://thezoryn.github.io/Calculator/','_blank');
-});
-document.getElementById("quizBtn").addEventListener("click", function(){
-  window.open("//pl27620470.revenuecpmgate.com/e5/4c/9a/e54c9a94ff38a44a6ada75257338ec81.js", "_blank");
-  window.open('https://thezoryn.github.io/Naruto-Quiz/','_blank');
-});
+// Popup / Popunder safe open with alert if blocked
+function openPopup(url) {
+  var newWindow = window.open(url, '_blank');
+  if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+    alert("Popup blocked! Please allow popups for this site.");
+  }
+}
+
+// Event listeners for buttons
+document.getElementById('calcBtn').addEventListener('click', function(){ openPopup('https://thezoryn.github.io/Calculator/'); });
+document.getElementById('calcBtn2').addEventListener('click', function(){ openPopup('https://thezoryn.github.io/Calculator/'); });
+document.getElementById('quizBtn').addEventListener('click', function(){ openPopup('https://thezoryn.github.io/Naruto-Quiz/'); });
+document.getElementById('quizBtn2').addEventListener('click', function(){ openPopup('https://thezoryn.github.io/Naruto-Quiz/'); });
 </script>
 
 </body>
